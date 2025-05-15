@@ -5,7 +5,15 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddOpenApi();
 builder.Services.AddSwaggerGen();
 builder.Services.AddControllers();
-
+builder.Services.AddCors(options =>
+{
+    options.AddPolicy("AllowReactApp", policy =>
+    {
+        policy.WithOrigins("http://localhost:3000") // React app URL
+              .AllowAnyHeader()
+              .AllowAnyMethod();
+    });
+});
 
 
 var app = builder.Build();
@@ -40,6 +48,7 @@ app.MapGet("/weatherforecast", () =>
 })
 .WithName("GetWeatherForecast");
 app.MapControllers();
+app.UseCors("AllowReactApp");
 app.Run();
 
 record WeatherForecast(DateOnly Date, int TemperatureC, string? Summary)
