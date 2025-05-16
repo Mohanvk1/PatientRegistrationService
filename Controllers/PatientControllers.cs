@@ -13,11 +13,11 @@ public class PatientController : ControllerBase
       Id = patientId,
       FirstName = "Mohan",
       LastName = "CH",
-      Age = 25,
-      Diagnosis = "Hypertension",
-      DateOfBirth = "mm-dd-yy",
+      // Age = 25,
+      // Diagnosis = "Hypertension",
+      // DateOfBirth = "mm-dd-yy",
       Insurance = "cigna",
-      Phone=9457322287
+      // Phone=9457322287
     };
     return Ok(patient);
   }
