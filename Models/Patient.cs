@@ -1,7 +1,14 @@
-public class Patient{
-    public int Id{get;set;}
-    public string? Name{get;set;}
-     public int Age{get;set;}
-      public string? Diagnosis{get;set;}
+public class Patient
+{
+    public int Id { get; set; }
+    public string? FirstName { get; set; }
+    public string? LastName { get; set; }
+    public int Age { get; set; }
+    public string? Diagnosis { get; set; }
+    public string? DateOfBirth { get; set; }
+    public string? Insurance { get; set; }
+    
+    public long Phone{ get; set; }
+
     
 }
